@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-white: #ffffff;
+    --primary-dark-orange: #D35400;
+    --secondary-semi-dark-orange: #E67E22;
+    --light-orange: #F8C471;
+    --tint-cream-orange: #FFF8F0;
+    --border-soft-orange: #FAD7A0;
+    --text-dark: #2C3E50;
+    --text-muted: #5D6D7E;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FFFFFF;
+    color: #2C3E50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom scrollbar matching orange theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #E67E22;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D35400;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom helper utilities for institutional palette */
+.bg-srit-primary { background-color: #D35400; }
+.bg-srit-secondary { background-color: #E67E22; }
+.bg-srit-light { background-color: #F8C471; }
+.bg-srit-tint { background-color: #FFF8F0; }
+
+.text-srit-primary { color: #D35400; }
+.text-srit-secondary { color: #E67E22; }
+.text-srit-dark { color: #2C3E50; }
+.text-srit-muted { color: #5D6D7E; }
+
+.border-srit-primary { border-color: #D35400; }
+.border-srit-secondary { border-color: #E67E22; }
+.border-srit-light { border-color: #F8C471; }
+.border-srit-soft { border-color: #FAD7A0; }
+
+/* Institutional card style */
+.srit-card {
+  background-color: #FFFFFF;
+  border: 1px solid #FAD7A0;
+  box-shadow: 0 4px 12px -2px rgba(211, 84, 0, 0.05);
+  border-radius: 1rem;
+}
+
+.srit-card:hover {
+  border-color: #E67E22;
+  box-shadow: 0 8px 24px -4px rgba(211, 84, 0, 0.12);
+}
+
+.srit-btn-primary {
+  background-color: #D35400;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+.srit-btn-primary:hover {
+  background-color: #E67E22;
+  box-shadow: 0 4px 14px rgba(211, 84, 0, 0.25);
+}
+
+.srit-btn-secondary {
+  background-color: #FFF8F0;
+  color: #D35400;
+  border: 1px solid #FAD7A0;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+.srit-btn-secondary:hover {
+  background-color: #FAD7A0;
+  color: #2C3E50;
+}
+
+/* ==================================================== */
+/* PRINT MODE OPTIMIZATION RULES                        */
+/* ==================================================== */
+@media print {
+  /* Automatically hide layout chrome, navigation, search, sidebars, and floating buttons */
+  header,
+  aside,
+  nav,
+  .no-print,
+  .mobile-nav,
+  .notification-bell,
+  .global-search,
+  .floating-button,
+  .pwa-banner,
+  .offline-indicator {
+    display: none !important;
+  }
+
+  /* Reset main container dimensions and margins for clean printing */
+  body,
+  #main-content,
+  main {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  /* Force page breaks for clean printing where needed */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid;
+  }
+}

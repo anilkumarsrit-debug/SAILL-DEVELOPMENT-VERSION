@@ -1,0 +1,11 @@
+{
+  "name": "SAILL - SRIT AI Language Laboratory",
+  "description": "Communicative English Laboratory platform for First-Year Engineering students following the R26 syllabus.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
